@@ -55,6 +55,11 @@ class ThisComponent extends Component {
     );
   }
 }
+ThisComponent.propTypes = {
+  propPassedFromParentComponent: PropTypes.arrayOf(PropTypes.object),
+  anotherPropFromParent: PropTypes.string.isRequired,
+  otherProp:PropTypes.number
+};
 
 export default ThisComponent;
 ```
