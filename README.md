@@ -17,8 +17,13 @@ class ThisComponent extends Component {
   constructor() {
     super(...arguments);
     this.state = {
-      aStateVar: false
+      aStateVar: false,
+      anInput: "lorem ipsum"
     };
+  }
+  
+  handleChangeFunction(event) {
+    this.setState({anInput: event.target.value});
   }
   
   render() {
@@ -38,7 +43,9 @@ class ThisComponent extends Component {
     };
     
     return (
-      <divOrSomeElement className="someOtherClass">
+      <divOrSomeElement className="someOtherClass" >
+        <input type="search" value={this.state.anInput}
+               onChange={this.handleChangeFunction.bind(this)} />
         <divOrSomeElement className="thisComponentsOtherProp" onClick={
           ()=>this.setState({aStateVar: !this.state.aStateVar})>
           {this.props.otherProp}
