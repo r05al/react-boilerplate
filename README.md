@@ -63,3 +63,6 @@ ThisComponent.propTypes = {
 
 export default ThisComponent;
 ```
+
+**Props** are passed down and immutable from inheriting component
+**State** have default set in constructor and can mutate from user interaction
